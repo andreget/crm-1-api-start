@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.RegularExpressions;
-using NaiveCrm.Models;
-using NaiveCrm.Services;
+using Crm.Models;
+using Crm.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
@@ -208,6 +208,18 @@ app.MapPost("/activities/{id:int}/delete", async (int id, HttpRequest request) =
     var form = await request.ReadFormAsync();
     new ActivityService().Delete(id);
     return Results.Redirect(SafeBack(form["back"].ToString()));
+});
+
+// ---------- API (JSON) ----------
+
+// Returns all customers as JSON
+app.MapGet("/api/customers", () => new CustomerService().GetAll());
+
+// Returns one customer, or 404 if the id does not exist
+app.MapGet("/api/customers/{id:int}", (int id) =>
+{
+    var customer = new CustomerService().GetById(id);
+    return customer == null ? Results.NotFound() : Results.Ok(customer);
 });
 
 app.Run();
