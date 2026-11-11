@@ -83,7 +83,7 @@ git checkout customers.json
 
 ## Logg
 
-Repoet inneholder filen `LOG.md`. Før logg underveis mens du jobber med
+Repoet inneholder filen `Log.md`. Før logg underveis mens du jobber med
 oppgaven: feil du møter, og korte designnotater om valg du tar. Malene
 ligger i filen. Commit loggen sammen med koden.
 
