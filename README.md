@@ -68,6 +68,7 @@ Templates/          HTML-maler med {{placeholders}}
 wwwroot/            CSS og JavaScript
 customers.json      Eksempelkunder (appen endrer denne filen)
 Crm.http            Kall for å teste API-et
+Log.md              Logg og designnotater som du fører underveis (del av leveransen)
 ```
 
 ## Data
@@ -79,6 +80,14 @@ git checkout customers.json
 ```
 
 - `activities.json` opprettes første gang du legger til en aktivitet. Den følges ikke av Git. Slett filen for å fjerne alle aktiviteter.
+
+## Logg
+
+Repoet inneholder filen `LOG.md`. Før logg underveis mens du jobber med
+oppgaven: feil du møter, og korte designnotater om valg du tar. Malene
+ligger i filen. Commit loggen sammen med koden.
+
+Loggen er en del av leveransen, sammen med koden og `Assignment.http`.
 
 ## Feilsøking
 
